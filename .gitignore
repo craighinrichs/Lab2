@@ -1,0 +1,14 @@
+*.pbxuser
+*.perspectivev3
+build/*
+*.mode1v3
+Resources/atlas/*
+.LSOverride
+#old skool
+.svn
+
+#osx noise
+.DS_Store
+profile
+xcuserdata
+*.xcworkspace
