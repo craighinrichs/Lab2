@@ -13,6 +13,7 @@
 @synthesize guessNumberTextField;
 @synthesize lastGuessLabel;
 @synthesize playAgainButton;
+@synthesize guessButton;
 @synthesize guessCounterLabel;
 
 - (void)dealloc
@@ -22,6 +23,7 @@
     [guessCounterLabel release];
     [playAgainButton release];
     [lastGuessLabel release];
+    [guessButton release];
     [super dealloc];
 }
 
@@ -46,11 +48,13 @@
 - (void) resetBoard {
     randNumber = arc4random() % 100;
     guessCounter =0;
-    [guessResultLabel setText:@"Guess"];
+    [guessResultLabel setText:@""];
     [guessCounterLabel setText:@"Guess Count: 0"];
     [lastGuessLabel setHidden:YES];
     [lastGuessLabel setText:@""];
     [playAgainButton setHidden:YES];
+    [guessButton setEnabled:YES];
+    [guessNumberTextField setEnabled:YES];
     
      
 }
@@ -70,6 +74,7 @@
     [self setGuessCounterLabel:nil];
     [self setPlayAgainButton:nil];
     [self setLastGuessLabel:nil];
+    [self setGuessButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -83,18 +88,23 @@
 
 - (IBAction)guessButtonAction:(id)sender {
    
-    guessCounter++;
-    
+   
+     guessCounter++;
     int guessValue = [[guessNumberTextField text] intValue];
-    [guessCounterLabel setText: [NSString stringWithFormat:@"Guess Count: %d",guessCounter]];
+    
     [guessResultLabel setTextColor:[UIColor blackColor]];
-    [guessResultLabel setText:@"Guess"];
+    [guessResultLabel setText:@""];
     if(guessValue < 1 || guessValue > 100) {
         [guessResultLabel setTextColor:[UIColor redColor]];
         [guessResultLabel setText:@"Please enter a number between 1 and 100"];
+        guessCounter--; //should not count as a guess
+        
     } else if(guessValue == randNumber) {
         [guessResultLabel setText:@"Got It - Play again!"];
         [playAgainButton setHidden:NO];
+        [guessButton setEnabled:NO];
+        [guessNumberTextField setEnabled:NO];
+        [guessNumberTextField resignFirstResponder];
          
 
     } else if(guessValue > randNumber) {
@@ -103,11 +113,12 @@
         [guessResultLabel setText:@"Too Low"];
     }
     [lastGuessLabel setText:[NSString stringWithFormat:@"Last Guess: %i",guessValue]];
+    [guessCounterLabel setText: [NSString stringWithFormat:@"Guess Count: %d",guessCounter]];
     if(guessCounter==1) {
         [lastGuessLabel setHidden:NO];
     }
     [guessNumberTextField setText:@""];
-    [guessNumberTextField resignFirstResponder];
+   // [guessNumberTextField resignFirstResponder]; Keep keyboard open for easy of entry. Close when user wins the game. Thanks Justin for the suggestion!
 }
 
 - (IBAction)playAgainAction:(id)sender {

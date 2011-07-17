@@ -46,8 +46,8 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBUILabel" id="100264641">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{15, 102}, {280, 338}}</string>
+						<int key="NSvFlags">256</int>
+						<string key="NSFrame">{{19, 110}, {281, 43}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="801136415"/>
@@ -59,7 +59,7 @@
 						<string key="IBUIText">Guess</string>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica</string>
-							<double key="NSSize">30</double>
+							<double key="NSSize">18</double>
 							<int key="NSfFlags">16</int>
 						</object>
 						<object class="NSColor" key="IBUITextColor" id="451130815">
@@ -68,7 +68,7 @@
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
-						<float key="IBUIMinimumFontSize">30</float>
+						<float key="IBUIMinimumFontSize">15</float>
 						<int key="IBUINumberOfLines">5</int>
 						<int key="IBUITextAlignment">1</int>
 						<int key="IBUILineBreakMode">0</int>
@@ -142,10 +142,9 @@
 					<object class="IBUILabel" id="173160643">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 393}, {281, 21}}</string>
+						<string key="NSFrame">{{21, 190}, {281, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -166,7 +165,7 @@
 					<object class="IBUIButton" id="801136415">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">-2147483356</int>
-						<string key="NSFrame">{{114, 308}, {83, 37}}</string>
+						<string key="NSFrame">{{120, 241}, {83, 37}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="120413323"/>
@@ -187,7 +186,7 @@
 					<object class="IBUILabel" id="120413323">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 364}, {281, 21}}</string>
+						<string key="NSFrame">{{21, 161}, {281, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="173160643"/>
@@ -288,6 +287,14 @@
 					</object>
 					<int key="connectionID">22</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">guessButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="224148516"/>
+					</object>
+					<int key="connectionID">24</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -316,10 +323,10 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="224148516"/>
 							<reference ref="683768498"/>
-							<reference ref="801136415"/>
 							<reference ref="100264641"/>
-							<reference ref="120413323"/>
 							<reference ref="173160643"/>
+							<reference ref="120413323"/>
+							<reference ref="801136415"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -396,7 +403,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">22</int>
+			<int key="maxID">24</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -440,6 +447,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>guessButton</string>
 							<string>guessCounterLabel</string>
 							<string>guessNumberTextField</string>
 							<string>guessResultLabel</string>
@@ -448,6 +456,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UIButton</string>
 							<string>UILabel</string>
 							<string>UITextField</string>
 							<string>UILabel</string>
@@ -459,6 +468,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>guessButton</string>
 							<string>guessCounterLabel</string>
 							<string>guessNumberTextField</string>
 							<string>guessResultLabel</string>
@@ -467,6 +477,10 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">guessButton</string>
+								<string key="candidateClassName">UIButton</string>
+							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">guessCounterLabel</string>
 								<string key="candidateClassName">UILabel</string>
