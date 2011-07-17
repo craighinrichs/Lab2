@@ -13,6 +13,7 @@
     UITextField *guessNumberTextField;
     UILabel *lastGuessLabel;
     UIButton *playAgainButton;
+    UIButton *guessButton;
     UILabel *guessCounterLabel;
     UILabel *guessResultLabel;
     int randNumber;
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) IBOutlet UITextField *guessNumberTextField;
 @property (nonatomic, retain) IBOutlet UILabel *lastGuessLabel;
 @property (nonatomic, retain) IBOutlet UIButton *playAgainButton;
+@property (nonatomic, retain) IBOutlet UIButton *guessButton;
 @property (nonatomic, retain) IBOutlet UILabel *guessCounterLabel;
 - (IBAction)guessButtonAction:(id)sender;
 - (IBAction)playAgainAction:(id)sender;
