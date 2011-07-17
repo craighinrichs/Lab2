@@ -118,7 +118,6 @@
         [lastGuessLabel setHidden:NO];
     }
     [guessNumberTextField setText:@""];
-   // [guessNumberTextField resignFirstResponder]; Keep keyboard open for easy of entry. Close when user wins the game. Thanks Justin for the suggestion!
 }
 
 - (IBAction)playAgainAction:(id)sender {
